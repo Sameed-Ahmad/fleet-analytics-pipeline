@@ -52,3 +52,5 @@ htmlcov/
 tmp/
 temp/
 *.tmp
+
+fleet_plan_updated.json
