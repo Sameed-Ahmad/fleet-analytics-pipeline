@@ -20,7 +20,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 try:
     from kafka_services.producers.fleet_producer import FleetKafkaProducer
 except ImportError:
-    print("⚠️  Warning: FleetKafkaProducer not found. Running in test mode without Kafka.")
+    print(" Warning: FleetKafkaProducer not found. Running in test mode without Kafka.")
     FleetKafkaProducer = None
 
 
@@ -58,7 +58,7 @@ class FleetDataGenerator:
             'errors': 0
         }
         
-        self.logger.info(f"✅ Fleet initialized: {self.num_vehicles} vehicles, {self.num_drivers} drivers")
+        self.logger.info(f"Fleet initialized: {self.num_vehicles} vehicles, {self.num_drivers} drivers")
     
     def _setup_logger(self) -> logging.Logger:
         """Setup logging configuration"""
@@ -319,7 +319,7 @@ class FleetDataGenerator:
         Args:
             interval_seconds: Time between generation cycles
         """
-        self.logger.info(f"🚀 Starting continuous data generation (interval: {interval_seconds}s)")
+        self.logger.info(f"Starting continuous data generation (interval: {interval_seconds}s)")
         self.logger.info(f"   Press Ctrl+C to stop")
         
         try:
@@ -331,7 +331,7 @@ class FleetDataGenerator:
                 # Print stats every 10 cycles
                 if cycle % 10 == 0:
                     self.logger.info(
-                        f"📊 Cycle {cycle} | Telemetry: {self.stats['telemetry_sent']}, "
+                        f"Cycle {cycle} | Telemetry: {self.stats['telemetry_sent']}, "
                         f"Deliveries: {self.stats['deliveries_sent']}, "
                         f"Incidents: {self.stats['incidents_sent']}, "
                         f"Errors: {self.stats['errors']}"
@@ -340,13 +340,13 @@ class FleetDataGenerator:
                 time.sleep(interval_seconds)
         
         except KeyboardInterrupt:
-            self.logger.info("\n⏸️  Generation stopped by user")
+            self.logger.info("\n Generation stopped by user")
             self._print_final_stats()
     
     def _print_final_stats(self):
         """Print final generation statistics"""
         print(f"\n{'='*80}")
-        print("📊 GENERATION STATISTICS")
+        print("GENERATION STATISTICS")
         print(f"{'='*80}")
         print(f"Telemetry events: {self.stats['telemetry_sent']}")
         print(f"Delivery events:  {self.stats['deliveries_sent']}")
@@ -383,12 +383,12 @@ def main():
     kafka_producer = None
     if not args.test_mode:
         if FleetKafkaProducer is None:
-            print("❌ Kafka producer not available. Run with --test-mode or fix imports.")
+            print("Kafka producer not available. Run with --test-mode or fix imports.")
             sys.exit(1)
         
         kafka_producer = FleetKafkaProducer(bootstrap_servers=args.kafka_servers)
     else:
-        print("⚠️  Running in test mode (no Kafka)")
+        print("Running in test mode (no Kafka)")
     
     # Create generator
     generator = FleetDataGenerator(kafka_producer=kafka_producer)
