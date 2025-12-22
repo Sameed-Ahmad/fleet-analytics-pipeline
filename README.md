@@ -1,9 +1,5 @@
 # Fleet Analytics Pipeline - Real-Time Data Processing System
 
-[![Python](https://img.shields.io/badge/Python-3.11%2B-blue)](https://www.python.org/)
-[![Docker](https://img.shields.io/badge/Docker-Required-blue)](https://www.docker.com/)
-[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
-
 ## 📋 Project Overview
 
 A comprehensive **Big Data Analytics pipeline** for real-time fleet management, processing vehicle telemetry, deliveries, and incidents. The system demonstrates modern data engineering practices with streaming data processing, real-time analytics, and automated orchestration.
@@ -95,7 +91,7 @@ Grafana Dashboard (Auto-refresh: 60s)
 ### Data Volume
 
 - **Total Records**: 50,000+ telemetry events
-- **Data Size**: 300+ MB (exceeds requirement)
+- **Data Size**: 300+ MB 
 - **Generation Rate**: ~100 events/second during active generation
 
 ---
