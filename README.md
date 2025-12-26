@@ -134,7 +134,7 @@ Fleet management companies face critical operational challenges requiring **real
 
 ## 📊 Data Pipeline & Flow
 
-### 1. Statistical Data Generation (Requirement #3)
+### 1. Statistical Data Generation
 
 **AI-Based Generators (NOT Random)**:
 
@@ -247,7 +247,7 @@ class HMMDriverBehavior:
 
 **Why HMM?**: Driver state is hidden but affects observable behavior.
 
-### 2. Database Schema (Requirement #3)
+### 2. Database Schema
 
 #### Schema Overview: 8 Tables (Collections)
 
@@ -498,7 +498,7 @@ HAVING COUNT(del.delivery_id) > 10
 ORDER BY success_rate DESC;
 ```
 
-### 3. Data Volume & Archiving Policy (Requirement #4)
+### 3. Data Volume & Archiving Policy
 
 #### Data Volume Metrics
 
@@ -513,7 +513,7 @@ ORDER BY success_rate DESC;
 | **Daily data** | 7.2 GB/day | 300 MB/hour × 24 |
 | **48-hour HOT** | 14.4 GB | Retained in MongoDB |
 
-**Requirement Met**: ✅ Generates 300+ MB within 1 hour
+Generates 300+ MB within 1 hour
 
 #### 3-Tier Archiving Policy
 
@@ -838,7 +838,7 @@ fleet-analytics-pipeline/
 
 ---
 
-## 🔄 Airflow DAGs (7 Total) - Requirement #6
+## 🔄 Airflow DAGs (7 Total)
 
 ### DAG 1: Data Generation DAG
 **File**: `airflow/dags/data_generation_dag.py`
