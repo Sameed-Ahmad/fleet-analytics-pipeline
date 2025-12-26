@@ -33,7 +33,7 @@ Fleet management companies face critical operational challenges requiring **real
 
 ---
 
-## �️ Big Data Architecture
+##  Big Data Architecture
 
 ### High-Level Architecture Diagram
 
